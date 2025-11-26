@@ -9,34 +9,82 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #1a1a1a, #000);
+  background: pink;
   font-family: Arial, sans-serif;
 }
 
-.relogio {
-  background: rgba(255, 255, 255, 0.07);
-  padding: 40px 60px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  display: flex;
-  gap: 20px;
+.clock {
+  width: 320px;
+  height: 320px;
+  background: #fff;
+  border-radius: 50%;
+  border: 8px solid #000;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.caixa {
-  text-align: center;
-  color: white;
-  width: 120px;
-}
-
-.caixa span {
-  display: block;
-  font-size: 4rem;
+/* NÚMEROS */
+.number {
+  position: absolute;
+  font-size: 25px;
   font-weight: bold;
+  color: #000;
+  transform: translate(-50%, -50%);
 }
 
-.titulo {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-top: 5px;
-  letter-spacing: 2px;
+.number1  { top: 22%; left: 68%; }
+.number2  { top: 35%; left: 82%; }
+.number3  { top: 50%; left: 90%; }
+.number4  { top: 65%; left: 82%; }
+.number5  { top: 78%; left: 68%; }
+.number6  { top: 85%; left: 50%; }
+.number7  { top: 78%; left: 32%; }
+.number8  { top: 65%; left: 18%; }
+.number9  { top: 50%; left: 10%; }
+.number10 { top: 35%; left: 18%; }
+.number11 { top: 22%; left: 32%; }
+.number12 { top: 15%; left: 50%; }
+
+/* ----------------------------- */
+/*      🚨 PONTEIROS CORRIGIDOS  */
+/* ----------------------------- */
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: 50% 100%; /* base do ponteiro no centro do relógio */
+}
+
+.hour {
+  width: 8px;
+  height: 70px;
+  background: black;
+  border-radius: 10px;
+}
+
+.minute {
+  width: 6px;
+  height: 100px;
+  background: #333;
+  border-radius: 10px;
+}
+
+.second {
+  width: 3px;
+  height: 120px;
+  background: red;
+  border-radius: 10px;
+}
+
+/* PONTO CENTRAL */
+.center-point {
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

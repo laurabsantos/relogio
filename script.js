@@ -1,13 +1,24 @@
 function atualizarRelogio() {
   const agora = new Date();
 
-  let h = agora.getHours().toString().padStart(2, '0');
-  let m = agora.getMinutes().toString().padStart(2, '0');
-  let s = agora.getSeconds().toString().padStart(2, '0');
+  const h = agora.getHours();
+  const m = agora.getMinutes();
+  const s = agora.getSeconds();
 
-  document.getElementById("horas").textContent = h;
-  document.getElementById("minutos").textContent = m;
-  document.getElementById("segundos").textContent = s;
+  // Ângulos
+  const anguloHora   = (h % 12) * 30 + m * 0.5;
+  const anguloMinuto = m * 6;
+  const anguloSegundo = s * 6;
+
+  // Aplicar rotação
+  document.getElementById("hour").style.transform =
+      `translateX(-50%) rotate(${anguloHora}deg)`;
+
+  document.getElementById("minute").style.transform =
+      `translateX(-50%) rotate(${anguloMinuto}deg)`;
+
+  document.getElementById("second").style.transform =
+      `translateX(-50%) rotate(${anguloSegundo}deg)`;
 }
 
 setInterval(atualizarRelogio, 1000);

@@ -3,88 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relógio Digital</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #1a1a1a, #000);
-      font-family: Arial, sans-serif;
-    }
-
-    .relogio {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 40px 60px;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      display: flex;
-      gap: 20px;
-    }
-
-    .caixa {
-      text-align: center;
-      color: white;
-      width: 120px;
-    }
-
-    .caixa span {
-      display: block;
-      font-size: 4rem;
-      font-weight: bold;
-    }
-
-    .titulo {
-      font-size: 1rem;
-      opacity: 0.7;
-      margin-top: 5px;
-      letter-spacing: 2px;
-    }
-  </style>
+  <title>Relógio Analógico</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="relogio">
-    <div class="caixa">
-      <span id="horas">00</span>
-      <div class="titulo">HORAS</div>
-    </div>
+  <div class="clock">
+    <!-- NÚMEROS -->
+    <div class="number number1">1</div>
+    <div class="number number2">2</div>
+    <div class="number number3">3</div>
+    <div class="number number4">4</div>
+    <div class="number number5">5</div>
+    <div class="number number6">6</div>
+    <div class="number number7">7</div>
+    <div class="number number8">8</div>
+    <div class="number number9">9</div>
+    <div class="number number10">10</div>
+    <div class="number number11">11</div>
+    <div class="number number12">12</div>
 
-    <div class="caixa">
-      <span id="minutos">00</span>
-      <div class="titulo">MINUTOS</div>
-    </div>
+    <!-- PONTEIROS -->
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
 
-    <div class="caixa">
-      <span id="segundos">00</span>
-      <div class="titulo">SEGUNDOS</div>
-    </div>
+    <!-- PONTO CENTRAL -->
+    <div class="center-point"></div>
   </div>
 
-  <script>
-    function atualizarRelogio() {
-      const agora = new Date();
-
-      let h = agora.getHours().toString().padStart(2, '0');
-      let m = agora.getMinutes().toString().padStart(2, '0');
-      let s = agora.getSeconds().toString().padStart(2, '0');
-
-      document.getElementById("horas").textContent = h;
-      document.getElementById("minutos").textContent = m;
-      document.getElementById("segundos").textContent = s;
-    }
-
-    setInterval(atualizarRelogio, 1000);
-    atualizarRelogio();
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
